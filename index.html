@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  </head>
+  <body>
+
+    <div class="jumbotron">
+      <video loop="loop" preload="auto" autoplay="true" id="pretzel-video" class="video-playing" src="images/stream.mov" muted>
+        <!-- <source src="//a0.muscache.com/airbnb/static/London-P1-0.webm" type="video/webm"> -->
+      </video>
+
+      <div class="tagline">
+        <h1>City life is too fast</h1>
+        <button id="slow-down-button">Slow down</button>
+      </div>
+    </div>
+
+    <section id="house-front">
+      <img src="images/front.jpg">
+    </section>
+
+    <section id="house-desk">
+      <img src="images/desk.jpg">
+    </section>
+
+    <section id="house-bedroom">
+      <img src="images/bedroom.jpg">
+    </section>
+
+    <section id="house-door">
+      <img src="images/door.jpg">
+    </section>
+
+    <section id="call-to-action">
+      <button>
+        <p>Take some time out of the city.</p>
+        <h3>Book your stay now</h3>
+      </button>
+    </section>
+
+  </body>
+</html>
+
+<script type="text/javascript">
+  var vid = document.getElementById("pretzel-video");
+  vid.playbackRate = 0.5;
+
+  $("#slow-down-button").click(function() {
+    $(".tagline").fadeOut(1000);
+    vid.playbackRate = 0.1;
+    $('body').delay(1500).animate({
+      scrollTop: $("#house-front").offset().top
+    }, 3000);
+  })
+  
+
+</script>
